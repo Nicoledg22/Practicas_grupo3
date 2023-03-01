@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Registro</title>
+        <meta charset="UTF-8">
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box; 
+                background-color: whitesmoke;
+                font-family: sans-serif;
+            }
+            .body{
+                background: white;               
+            }
+            .container{
+                /*caja del registro*/
+                 width: 500px;
+                 padding: 20px;
+                 background: white;
+                 margin: auto;
+                 margin-top: 50px;
+                 
+            }
+            .titulo{
+                text-align: center;
+                border:solid;
+                border-style: solid;
+                padding: 15px;
+                color: lightslategrey;
+                
+            }
+            .lista{
+                /*el formulario en general*/
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+                color: black;
+            }
+            
+            .Nombre,.capital,.habitantes,.nacionalidad
+            ,.costas,.ciudad {
+                display: flex;
+                flex-direction: column;    
+            }
+            /*medidad de cada cuadro*/
+            input{
+                padding: 10px;
+                
+            }
+            .guar{
+                text-align: right;
+          
+            }
+            .boton{
+                background:lightslategray;
+                width: 100px;
+                text-align: center;
+                padding: 10px;
+                color: white;
+                border-style: none;
+                font-size: 1.0rem;
+             
+                
+            }
+            .regre{
+                border: none;
+                background:lightslategray;
+                border-style: solid ;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+                font-size: 1.0rem;
+                
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class= "container" >
+            <form th:action="@{/estado/guardar}"
+              method="post"
+              th:object="${estado}" class="formulario">
+              
+                <h2 class="titulo">Registro</h2> 
+                <div class="lista">
+                 <input type="hidden" name="idPais" value="" th:field="*{idPais}"/>
+
+                 <div class="Nombre">
+                     <label for="">Nombre</label>
+                     <input type="text" name="nombre" value="" th:field="*{nombre}"/>
+                 </div>
+                 <div class="costas">
+                     <label for="">Costas</label> <!-- Nombre fuera de la caja -->
+                     <input type="number" name="costas" value="" th:field="*{costas}"/>
+                 </div> 
+                 <div class="habitantes">
+                     <label for="">Habitantes</label> <!-- Nombre fuera de la caja -->
+                     <input type="number" name="habitantes" value="" th:field="*{habitantes}"/>
+                 </div> 
+                 <div class="nacionalidad">
+                      <label for="">Nacionalidad</label>
+                     <input type="text" name="nacionalidad" value="" th:field="*{nacionalidad}"/>
+                 </div>
+                 <div class="capital">
+                     <label for="">Capital</label>
+                     <input type="text" name="capital" value="" th:field="*{capital}"/>
+                 </div>
+                 <div class="ciudad">
+                     <label for="">Estado</label>
+                     <input type="text" name="ciudad" value="" th:field="*{ciudad}"/>
+                 </div>
+                 <div class="opcion">
+                     <a class="regre" th:href="@{/}"> Regresar</a> 
+                  
+                 </div>
+                 <div class="guar">
+                  <input class="boton" type="submit" value="Guardar" />
+                 </div>
+                </div>
+                     
+        </form>
+     </div>
+    </body>
+</html>

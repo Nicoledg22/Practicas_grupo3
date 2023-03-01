@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Informacion</title>
+        <meta charset="UTF-8">    
+        <link href="css/estilo1.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="container">
+     <h2 class="tit">REGISTRO DE PAISES</h2>
+        <br>
+        <hr>
+        <div class="bt">
+        <a class="ingresar" th:href="@{/estado/nuevo}"> Nuevo Estado</a>
+        </div>
+        
+        <div th:if="${estados !=null and !estados.empty}"> <!--<!-- verificacion de los datos en la tabla*/ -->
+        
+        <table border="0">
+            <thead>
+                <tr>
+                    <th class="opc">Nombre</th>
+                    <th class="opc">Costas</th>
+                    <th class="opc">Habitantes</th>
+                    <th class="opc">Nacionalidades</th>
+                    <th class="opc">Capital</th>
+                    <th class="opc">Ciudad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="estado : ${estados}">
+                    <td class="info">[[${estado.nombre}]]</td>
+                    <td class="info">[[${estado.costas}]]</td>
+                    <td class="info">[[${estado.habitantes}]]</td>
+                    <td class="info">[[${estado.nacionalidad}]]</td>
+                    <td class="info">[[${estado.capital}]]</td>
+                    <td class="info">[[${estado.ciudad}]]</td>
+                    <td class="info"><a class="eli" th:href="@{/estado/eliminar/} + ${estado.idPais}"> Eliminar</a>
+                        <a class="mod" th:href="@{/estado/modificar/} + ${estado.idPais}"> Modificar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+        
+        <div th:if="${estados == null or estados.empty}"> <!-- negacion si no hay datos en la tabla-->
+            <h3>No hay estados por mostrar</h3>
+        </div>
+     </div>
+    </body>
+</html>

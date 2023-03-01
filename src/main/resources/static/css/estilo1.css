@@ -1,0 +1,59 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    font-family: sans-serif;
+    
+}
+.body{
+  background: whitesmoke;
+}
+.container{
+    width: 1000px;
+    padding: 20px;
+    margin-top: 50px;
+    margin: auto;
+    background: whitesmoke;
+}
+.opc{
+     padding: 20px;
+    text-align: left;
+}
+.tit{
+    text-align: center;
+    padding: 10px;
+}
+.ingresar{
+    background: lightslategrey;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-style: none;
+    font-size: 1.0rem;        
+    
+}
+.bt{
+    padding: 20px 0;
+}
+
+.info{
+    padding: 20px;
+    text-align: left; 
+}
+.eli{
+    background: lightslategrey;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-style: none;
+    font-size: 1.0rem;  
+}
+.mod{
+    background: lightslategrey;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-style: none;
+    font-size: 1.0rem;  
+}
